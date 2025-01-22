@@ -20,7 +20,7 @@ const route = useRoute()
 // console.log(route);
 
 const destination = computed(() => {
-    return sourceData.destinations.find(destination => destination.id === Number(route.params.id))
+    return sourceData.destinations.find(destination => destination.slug === route.params.slug)
 })
 
 // console.log(destination);
@@ -28,7 +28,7 @@ const destination = computed(() => {
 // console.log(destination.value.image);
 // console.log(destination.value.experiences);
 
-const experiences = destination.value.experiences
+const experiences = computed(() => destination.value.experiences || [])
 // console.log(experiences);
 // console.log(experiences[0].image);
 // console.log(experiences[0].name);

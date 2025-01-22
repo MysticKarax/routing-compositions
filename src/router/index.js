@@ -2,15 +2,14 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/views/Home.vue";
 
 // AQUI SE CREAN LAS RUTAS
-
-// LAZY LOADING
 const routes = [
   { path: "/", name: "Home", component: Home },
 
   // ROUTE PARAMS WITH ROUTER
   {
-    path: "/destination/:id/:slug",
+    path: "/:slug",
     name: "destination.show",
+    // LAZY LOADING
     component: () => import("@/views/DestinationShow.vue"),
   },
 ];
