@@ -11,11 +11,14 @@ console.log(route);
 
 // console.log(computed());
 console.log(route.params);
-const destinationId = computed(() => Number(route.params.id));
-console.log(destinationId);
+// const destinationId = computed(() => Number(route.params.id));
+// console.log(destinationId);
+
+console.log(sourceData.destinations);
 
 const destination = computed(() => {
-  return sourceData.destinations.find(destination => destination.slug === route.params.slug);
+  return sourceData.destinations.find(destination => Number(destination.id) 
+  === Number(route.params.id));
 });
 console.log(destination);
 

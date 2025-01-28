@@ -7,7 +7,9 @@ const routes = [
 
   // ROUTE PARAMS WITH ROUTER
   {
-    path: "/:slug",
+    // FIMXE: BORRE destination/:id/ PARA SOLO LEER SLUG, QUE ES EL NOMBRE DE LA PAGINA ACTUAL.
+    // EN DestinationShow.vue y ExperienceCard.vue DEJE DE RECIBIR E INTENTAR LEER EL ID DE LA URL.
+    path: "/destinations/:id",
     name: "destination.show",
     // LAZY LOADING
     component: () => import("@/views/DestinationShow.vue"),

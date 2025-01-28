@@ -20,7 +20,8 @@ const route = useRoute()
 // console.log(route);
 
 const destination = computed(() => {
-    return sourceData.destinations.find(destination => destination.slug === route.params.slug)
+    return sourceData.destinations.find(destination => Number(destination.id) 
+    === Number(route.params.id))
 })
 
 // console.log(destination);
